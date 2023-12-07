@@ -1,0 +1,47 @@
+prevent form submission when there is error
+
+
+
+
+Goal:
+web app on React JS to verify the 
+bank account of a user and save it to the backend after successful verification. 
+
+**The app will be used by Uber cab drivers who may have limited education and language proficiency.
+**The app should be designed to be easy to use and intuitive for such users.
+---------------------
+The app should have two screens:
+
+Screen 1: (transaction details form)
+This screen should allow the user to enter their bank account number and IFSC code. 
+The user should be prevented from making mistakes when entering their account number. 
+You should also validate the entered IFSC using the API provided at http://ifsc.razorpay.com/<ifsc>. 
+If the user does not have the IFSC code, provide an option for the user to find it. 
+Local validation is required for the entered values.
+
+Screen 2:  (transaction confirmation)
+This screen should show the entered details for reference.
+Create a mock-up of a Penny Drop API. 
+During the Penny Drop, the app should show an animation to keep the user engaged. 
+The status of the verification process should be displayed on the UI. 
+After verification, let the user confirm if they have received the amount or not.
+
+User Persona:
+The app will be used by Uber cab drivers who may have limited education and language proficiency. Use the specific user person below to create the app.
+
+The user is:
+A non-native English speaker.
+Educated only till class 7 from a public school.
+Capable of spelling out English letters but unable to comprehend complex words.
+Busy during the day taking rides and uses his phone while working.
+
+
+How would you be evaluated?
+
+
+Your submission will be evaluated based on the following criteria:
+
+User experience - The app should be intuitive and easy to use for the user persona.
+Code quality - The code should be well-organized, maintainable, and easy to understand.
+Architecture - The app should be designed with scalability in mind and should follow best practices.
+Functionality- The app should be able to meet all the above outlined requirements.
