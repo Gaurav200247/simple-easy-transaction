@@ -86,7 +86,7 @@ const BankDetailsForm = () => {
 
     setTimeout(() => {
       localStorage.setItem("beneficiary", JSON.stringify(beneficiary));
-      navigate("/confirm_transaction");
+      navigate("/request_transaction");
       setPennyCheckLoading(false);
       toast.success("Beneficiary Added.");
     }, 5000);
@@ -111,7 +111,7 @@ const BankDetailsForm = () => {
         initialValues={{
           AccNo: "",
           ReAccNO: "",
-          IFSC: "",
+          IFSC: localStorage.getItem("dummy_IFSC") || "",
           HolderName: "",
         }}
         validationSchema={validationSchema}
@@ -140,7 +140,7 @@ const BankDetailsForm = () => {
             <motion.button
               disabled={!isValid}
               variants={buttonMotion}
-              className={`w-full bg-green-500 py-2 mt-5 rounded-full text-white disabled:bg-green-600 shadow-md duration-100`}
+              className={`custom_btn`}
             >
               Confirm
             </motion.button>

@@ -6,6 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.custom_btn {
+  @apply w-full bg-green-500 py-2 mt-5 rounded-full text-white disabled:bg-green-600 shadow-md duration-100;
+}
+
 .holder_details-container > p {
   @apply py-2;
 }

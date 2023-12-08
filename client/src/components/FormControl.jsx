@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineReportGmailerrorred } from "react-icons/md";
 import { motion } from "framer-motion";
 import { ErrorMessage, Field } from "formik";
+import { Link } from "react-router-dom";
 
 const FormControl = ({ label, name, errors, touched, setFieldValue }) => {
   return (
@@ -10,7 +11,7 @@ const FormControl = ({ label, name, errors, touched, setFieldValue }) => {
       initial="hidden"
       animate="visible"
       variants={inputMotion}
-      className="w-full my-3"
+      className="w-full my-3 relative"
     >
       <Field
         type="text"
@@ -29,6 +30,12 @@ const FormControl = ({ label, name, errors, touched, setFieldValue }) => {
         }}
         required
       />
+
+      {
+        name === "IFSC" && <Link to='/find_ifsc_code'
+          className="absolute right-10 top-2 text-blue-600 font-medium bg-sky-50 px-5 py-2 duration-200 hover:bg-blue-100 rounded-md"
+        >Find IFSC</Link>
+      }
 
       {/* validation msg */}
       <ErrorMessage

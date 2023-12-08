@@ -1,11 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import BankDetailsForm from "./screens/Transaction_Screens/BankDetailsForm";
-import TransactionConfirmation from "./screens/Transaction_Screens/TransactionConfirmation";
+import TransactionRequest from "./screens/Transaction_Screens/TransactionRequest";
 import Home from "./screens/Home";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TransactionConfirmation from "./screens/Transaction_Screens/TransactionConfirmation";
+import IFSC_Finder from "./screens/Transaction_Screens/IFSC_Finder";
 
 const App = () => {
   const containerMotion = {
@@ -48,9 +50,17 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/bank_details_form" element={<BankDetailsForm />} />
           <Route
-            path="/confirm_transaction"
-            element={<TransactionConfirmation />}
+            path="/request_transaction"
+            element={<TransactionRequest />}
           />
+          <Route
+            path="/find_ifsc_code"
+            element={<IFSC_Finder />}
+          />
+          <Route
+          path="/confirm_transaction"
+          element={<TransactionConfirmation />}
+        />
         </Routes>
       </motion.div>
     </div>

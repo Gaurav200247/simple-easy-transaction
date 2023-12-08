@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsBank } from "react-icons/bs";
 import { IoIosMore } from "react-icons/io";
 import { IoMdPhonePortrait } from "react-icons/io";
@@ -41,6 +41,18 @@ const Home = () => {
     },
   ];
 
+  useEffect(() => {
+    let dummyIfsc = localStorage.getItem("dummy_IFSC");
+    let beneficiary = localStorage.getItem("beneficiary");
+
+    if (dummyIfsc) {
+      localStorage.setItem("dummy_IFSC", "");
+    }
+    if (beneficiary) {
+      localStorage.setItem("beneficiary", "");
+    }
+  }, []);
+
   const [Transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem("transactions"))?.slice(-5)?.reverse() || []
   );
@@ -48,7 +60,7 @@ const Home = () => {
   return (
     <div className="flex flex-col justify-between items-center w-full h-full sm:min-h-[75vh]">
       {/* balance indicator */}
-      <div className="rounded-b-[100%] duration-300 hover:rounded-none flex flex-col justify-center items-center w-full h-[30vh] bg bg-green-300 shadow-md">
+      <div className="rounded-b-[100%] duration-300 hover:rounded-none flex flex-col justify-center items-center w-full h-[30vh] bg bg-green-400 shadow-md">
         <h1 className="text-[1.3rem]">Current Balance</h1>
         <h2 className="text-[2rem] font-medium w-full hover:scale-110 duration-100 text-center cursor-pointer">
           ₹ {parseInt(localStorage.getItem("balance")) || 0}
